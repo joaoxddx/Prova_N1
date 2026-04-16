@@ -5,25 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List MVC - FormaPro</title>
     <meta name="description" content="Aplicação de gerenciamento de tarefas utilizando Arquitetura MVC com LocalStorage">
-    <link rel="stylesheet" href="./style.css">
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
-<body>
-    <div class="app-container">
-        <header>
-            <h1>Minhas Tarefas</h1>
-            <form id="form-tarefa">
-                <input type="text" id="input-descricao" placeholder="O que precisa ser feito?" autocomplete="off" required>
-                <button type="submit" id="btn-adicionar">Adicionar</button>
+<body class="bg-light">
+    <div class="container py-5" style="max-width: 650px;">
+        <header class="text-center mb-4">
+            <h1 class="display-5 text-primary fw-bold mb-4"><i class="bi bi-check2-square border rounded p-2 bg-white shadow-sm me-2"></i>Minhas Tarefas</h1>
+            <form id="form-tarefa" class="d-flex flex-column gap-3 shadow-sm rounded bg-white p-3">
+                <div class="d-flex gap-2">
+                    <input type="text" id="input-descricao" class="form-control form-control-lg border-secondary-subtle" placeholder="O que precisa ser feito?" autocomplete="off" required>
+                    <button type="submit" id="btn-adicionar" class="btn btn-primary btn-lg px-4 d-flex align-items-center gap-2">
+                        <i class="bi bi-plus-circle"></i> Adicionar
+                    </button>
+                </div>
+                <!-- checkbox para habilitar datas -->
+                <div class="form-check form-switch ms-1">
+                    <input class="form-check-input" type="checkbox" role="switch" id="check-datas">
+                    <label class="form-check-label text-muted small" for="check-datas">Especificar prazos e data de entrega</label>
+                </div>
+                <!-- campos de datas que ficarão ocultos primariamente -->
+                <div id="container-datas" class="d-none gap-2">
+                    <div class="flex-grow-1">
+                        <label class="form-label text-muted small mb-1">Data de Início</label>
+                        <input type="date" id="input-data-inicio" class="form-control text-secondary">
+                    </div>
+                    <div class="flex-grow-1">
+                        <label class="form-label text-muted small mb-1">Data de Entrega</label>
+                        <input type="date" id="input-data-fim" class="form-control text-secondary">
+                    </div>
+                </div>
             </form>
         </header>
 
         <main>
-            <ul id="lista-tarefas">
+            <ul id="lista-tarefas" class="list-group shadow-sm">
                 <!-- As tarefas serão renderizadas dinamicamente aqui -->
             </ul>
         </main>
     </div>
 
+    <!-- Bootstrap Bundle JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="./main.mjs"></script>
 </body>
 </html>

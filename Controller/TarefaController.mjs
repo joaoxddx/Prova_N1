@@ -6,9 +6,10 @@ export class TarefaController {
         this.service = new TarefaService();
     }
 
-    adicionarTarefa(descricao) {
-        Tarefa.Validar(descricao);
-        const novaTarefa = new Tarefa(descricao);
+    adicionarTarefa(descricao, dataInicio = null, dataFim = null) {
+        Tarefa.Validar(descricao, dataInicio, dataFim);
+        const novaTarefa = new Tarefa(descricao, false, null, null, dataInicio, dataFim);
+        console.log(novaTarefa)
         const tarefas = this.service.buscarTodas();
         tarefas.push(novaTarefa);
         this.service.salvarTodas(tarefas);
