@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List MVC - FormaPro</title>
+    <meta name="description" content="Aplicação de gerenciamento de tarefas utilizando Arquitetura MVC com LocalStorage">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Minhas Tarefas</h1>
+            <form id="form-tarefa">
+                <input type="text" id="input-descricao" placeholder="O que precisa ser feito?" autocomplete="off" required>
+                <button type="submit" id="btn-adicionar">Adicionar</button>
+            </form>
+        </header>
+
+        <main>
+            <ul id="lista-tarefas">
+                <!-- As tarefas serão renderizadas dinamicamente aqui -->
+            </ul>
+        </main>
+    </div>
+
+    <script type="module" src="./main.mjs"></script>
+</body>
+</html>

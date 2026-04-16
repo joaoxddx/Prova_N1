@@ -1,0 +1,12 @@
+{
+  "name": "crud_tarefas",
+  "version": "1.0.0",
+  "description": "Gerenciador de Tarefas TO-DO-List",
+  "license": "ISC",
+  "author": "João Pedro Gomes",
+  "type": "module",
+  "main": "main.mjs",
+  "scripts": {
+    "start": "npx serve ."
+  }
+}
